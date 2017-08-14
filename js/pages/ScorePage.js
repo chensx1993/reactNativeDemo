@@ -1,18 +1,18 @@
 import React, {
-    Component
+	Component
 } from 'react';
 
 import {
-    Text
+	Text
 } from 'react-native'
 
 class ScorePage extends Component {
-    static navigationOptions = {
-        title: '比分',
-  };
-  render() {
-    return <Text>比分页面</Text>;
-  }
+	static navigationOptions = {
+		title: '比分',
+	};
+	render() {
+		return <Text> 比分页面 </Text>;
+	}
 }
 
 export default ScorePage

@@ -1,8 +1,8 @@
 
 //import { combineReducers } from 'redux'
 
-//const login = require('.login')
+import { login } from './login'
 
-//export default login
+export default login
 
-module.exports.login = require('./login');
+// module.exports.login = require('./login');

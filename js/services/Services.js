@@ -1,5 +1,5 @@
 
-import fetchRequest from 'xFetch'
+import fetchRequest from './xFetch'
 
 export const QCPath = p => {
     if (/^http.*/.test(p)) {
@@ -8,6 +8,6 @@ export const QCPath = p => {
     return '' + p
 }
 
-export const userLogin = async(params) {
+export const userLogin = async(params) => {
     return await fetchRequest('/UserLogin/login', params);
 }

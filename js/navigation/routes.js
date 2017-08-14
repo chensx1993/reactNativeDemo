@@ -16,16 +16,16 @@ const Routes = {
   MePage: {
     name: '我的',
     description: 'A card stack',
-    screen: SimpleStack,
+    screen: MePage,
   },
   ScorePage: {
     name: '比分',
     description: 'Tabs following platform conventions',
-    screen: SimpleTabs,
+    screen: ScorePage,
   },
   HomePage: {
     name: '主页',
     description: 'Android-style drawer navigation',
-    screen: Drawer,
+    screen: HomePage,
     },
 };

@@ -5,12 +5,21 @@
  */
 
 import React from 'react'
-import { Provider } from 'react-redux'
-import { createStore } from 'redux'
+
+import {
+	Provider
+} from 'react-redux'
+
+import { 
+    createStore, 
+    applyMiddleware, 
+    combineReducers 
+} from 'redux';
+
 import thunk from 'redux-thunk';
 import * as reducers from './reducers';
-import AppWithNavigationState from './navigation/RootNavigation'
-import StacksInTabs from './navigation/CustomTabs'
+
+import MainTabNavigator from './navigation/RootNavigation'
 
 const createStoreWithThunk = applyMiddleware(thunk)(createStore);
 const reducer = combineReducers(reducers);
@@ -20,14 +29,14 @@ console.log(store.getState());
 
 const setup = () => {
 
-    return () => {
-        return (
-            <Provider store={store} >
-                <AppWithNavigationState/>
+	return () => {
+		return (
+			<Provider store={store} >
+                <MainTabNavigator />
             </Provider>
-        )
-    }
+		)
+	}
 }
 
-//const setup = () => MainTabNavigator
+// const setup = () => <MainTabNavigator />;
 export default setup

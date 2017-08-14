@@ -1,5 +1,5 @@
 
-import { QCPath } from 'Services'
+import { QCPath } from './Services'
 
 const checkIfErrorOccurs = res => {
     return {
@@ -10,29 +10,7 @@ const checkIfErrorOccurs = res => {
 
 const TIME_OUT = 15000
 
-export const async function fetchRequest(path, params = '', method = 'POST') {
-    let header = {
-        "Content-Type": "application/json;charset=UTF-8",
-    };
-
-    console.log('request url:',url,params);  //打印请求参数
-
-    if (params == '') {
-        return await xFetch(QCPath(path), {
-            method: method,
-            headers: header,
-            body: JSON.stringify(params)
-        })
-    } else {
-        return await xFetch(QCPath(path), {
-            method: method,
-            headers: header,
-            body: JSON.stringify(params)
-        })
-    };
-}
-
-export const async function xFetch(path, headerOptions, ops = { noParse: false }) {
+export async function xFetch(path, headerOptions, ops = { noParse: false }) {
     const normalFetch = fetch(path, headerOptions)
     if (ops.noParse) {
         return timeoutPromise(TIME_OUT, normalFetch)
@@ -65,6 +43,28 @@ export const timeoutPromise = function timeoutPromise(ms, promise) {
             }
         );
     })
+}
+
+async function fetchRequest(path, params = '', method = 'POST') {
+    let header = {
+        "Content-Type": "application/json;charset=UTF-8",
+    };
+
+    console.log('request url:',url,params);  //打印请求参数
+
+    if (params == '') {
+        return await xFetch(QCPath(path), {
+            method: method,
+            headers: header,
+            body: JSON.stringify(params)
+        })
+    } else {
+        return await xFetch(QCPath(path), {
+            method: method,
+            headers: header,
+            body: JSON.stringify(params)
+        })
+    };
 }
 
 export default fetchRequest

@@ -1,5 +1,5 @@
 import React, {
-	Component
+    Component
 } from 'react';
 
 import {
@@ -124,7 +124,7 @@ class MePage extends Component {
         );
     }
 
-	render() {
+    render() {
         let progressView;
 
         if (this.state.progress) {
