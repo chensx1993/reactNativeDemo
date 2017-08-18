@@ -12,7 +12,7 @@ import MePage from '../pages/MePage'
 import ScorePage from '../pages/ScorePage'
 import HomePage from '../pages/HomePage'
 
-const Routes = {
+export const Routes = {
   MePage: {
     name: '我的',
     description: 'A card stack',

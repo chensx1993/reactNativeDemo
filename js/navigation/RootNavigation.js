@@ -1,7 +1,7 @@
 import React from 'react'
-// import {
-//   connect
-// } from 'react-redux';
+import {
+  connect
+} from 'react-redux';
 import {
   Platform,
   Image
@@ -93,17 +93,17 @@ const MainTabNavigator = TabNavigator({
   ScoreTab: {
     screen: ScoreStackNavigator,
     path: '/scorePage',
-    navigationOptions: TabOptions('比分', 'ic_tab_normal_bf', 'ic_tab_select_bf', '设置'),
+    navigationOptions: TabOptions('比分', 'ic_tab_normal_bf', 'ic_tab_select_bf', '比分'),
   },
   HomeTab: {
     screen: HomeStackNavigator,
     path: '/homePage',
-    navigationOptions: TabOptions('比分', 'ic_tab_normal_bf', 'ic_tab_select_bf', '设置'),
+    navigationOptions: TabOptions('主页', 'ic_tab_normal_bf', 'ic_tab_select_bf', '主页'),
   },
   SettingsTab: {
     screen: MeStackNavigator,
     path: '/mePage',
-    navigationOptions: TabOptions('设置', 'ic_tab_normal_bf', 'ic_tab_select_bf', '设置'),
+    navigationOptions: TabOptions('我的', 'ic_tab_normal_bf', 'ic_tab_select_bf', '我的'),
   },
 }, {
   tabBarPosition: 'bottom',
@@ -111,17 +111,13 @@ const MainTabNavigator = TabNavigator({
   swipeEnabled: false,
 });
 
-export default MainTabNavigator;
+ // export default MainTabNavigator;
 
-// const AppWithNavigationState = ({
-//   dispatch,
-//   nav
-// }) => (
-//   <MainTabNavigator navigation = { addNavigationHelpers({ dispatch, this.state: nav})} />
+// const AppWithNavigationState = ({ dispatch, nav }) => (
+//   <MainTabNavigator navigation={addNavigationHelpers({ dispatch, state: nav })} />
 // );
-
-// const mapStateToProps = this.state => ({
-//   nav: this.state.nav,
+// const mapStateToProps = state => ({
+//   nav: state.nav
 // });
 
-// export default connect(mapStateToProps)(AppWithNavigationState)
+export default connect()(MainTabNavigator)

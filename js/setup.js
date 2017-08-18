@@ -16,16 +16,11 @@ import {
     combineReducers 
 } from 'redux';
 
+import store from './store/configureStore'
 import thunk from 'redux-thunk';
-import * as reducers from './reducers';
 
+// import AppWithNavigationState from './navigation/RootNavigation'
 import MainTabNavigator from './navigation/RootNavigation'
-
-const createStoreWithThunk = applyMiddleware(thunk)(createStore);
-const reducer = combineReducers(reducers);
-const store = createStoreWithThunk(reducer);
-
-console.log(store.getState());
 
 const setup = () => {
 

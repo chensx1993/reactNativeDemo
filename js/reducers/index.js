@@ -1,8 +1,10 @@
 
-//import { combineReducers } from 'redux'
+import { combineReducers } from 'redux'
 
-import { login } from './login'
+import { user } from './login'
 
-export default login
+export default combineReducers({
+    userStore: user,
+});
 
 // module.exports.login = require('./login');
